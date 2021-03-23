@@ -1,0 +1,77 @@
+using System;
+
+namespace Week8ClassDemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Student Name (4 to exit): ");
+
+            string input = Console.ReadLine();
+            //string studentName;
+            string[] studentNames = new string[10];
+            //studentNames[0] = "jinz";
+
+
+            int[] iStudentNames;
+
+            //IMPORTANT - array start with an index of 0
+            //another word; 1st element of my array is an index of 0; 2nd element is index of 1
+            //studentName = [0][1][2]
+
+            #region commented codes
+            /*
+            string studentName2;
+            string studentName3;
+            string studentName4;
+            string studentName5;
+
+            int studentNumber = 1;
+
+            //string student+studentNumber; //cannot do this; can not create a variable name with another variable
+            */
+            #endregion
+
+            int arrIndex = 0;
+
+            while (input != "exit" && input != "4") //user input exit command
+            {
+                studentNames[arrIndex] = input; //1st iteration = studentNames[0] = input;
+                if (arrIndex == 2)
+                {
+                    break; //reach maximum array storage space
+                }
+                Console.WriteLine("Enter another student Name: (4 to exit)");
+                input = Console.ReadLine();
+                arrIndex++;
+            }
+
+            for (int index = 0; index < studentNames.Length; index++)
+            {
+                if (studentNames[index] == null)
+                {
+                    break;
+                }
+
+                Console.WriteLine("Student " + (index + 1) + " : " + studentNames[index]);
+            }
+
+
+            int studentNameIndex = 0;
+            foreach (string studentName in studentNames)
+            {
+                //at the start of each iteration; declare string studentName and assign its data per element of array
+
+                Console.WriteLine("Student: " + studentName);
+
+                //studentNames[studentNameIndex] = "abc";
+                //studentNameIndex++;
+            }
+
+
+            //display the list of students
+            Console.ReadKey();
+        }
+    }
+}
